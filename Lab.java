@@ -19,11 +19,17 @@
 // }
 
 
-public class Lab{
+// public class Lab{
+//     public static void main(String[] args) {
+//         int a = 5 ;
+//         int b = 2323;
+//         int sum = a+b;
+//         System.out.println(sum);
+//     }
+// }
+
+public class Lab {
     public static void main(String[] args) {
-        int a = 5 ;
-        int b = 2323;
-        int sum = a+b;
-        System.out.println(sum);
+        System.out.println(Byte.MIN_VALUE + "TO" + Byte.MAX_VALUE);
     }
 }
