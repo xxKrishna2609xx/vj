@@ -51,11 +51,3 @@
 // 		sc.close();
 // 	}
 // }
-
-
-
-
-import java.util.*;
-public class FindIndex{
-    
-}
