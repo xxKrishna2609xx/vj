@@ -137,25 +137,62 @@
 // }
 
 
-class Amount {
-    private double balance;
+// class Amount {
+//     private double balance;
 
-    public void deposit(double amount) {
-        if (amount <= 0) {
-            throw new IllegalArgumentException("Deposit amount must be positive");
-        }
-        balance += amount;
-        System.out.println("Deposited: " + amount);
+//     public void deposit(double amount) {
+//         if (amount <= 0) {
+//             throw new IllegalArgumentException("Deposit amount must be positive");
+//         }
+//         balance += amount;
+//         System.out.println("Deposited: " + amount);
+//     }
+
+//     public void withdraw(double amount) throws Exception {
+//         if (amount <= 0) {
+//             throw new IllegalArgumentException("Withdrawal amount must be positive");
+//         } else if (amount > balance) {
+//             throw new Exception("Insufficient balance");
+//         } else {
+//             balance -= amount;
+//             System.out.println("Withdrew: " + amount);
+//         }
+//     }
+// }
+
+
+import java.util.*;
+
+public class StudentGradingSystem {
+    static char grade(int m) {
+        if (m < 0 || m > 100)
+            throw new IllegalArgumentException("Invalid marks");
+        if (m >= 90) 
+            return 'A';
+        if (m >= 75) 
+            return 'B';
+        if (m >= 60) 
+            return 'C';
+        if (m >= 40) 
+            return 'D';
+        return 'F';
     }
 
-    public void withdraw(double amount) throws Exception {
-        if (amount <= 0) {
-            throw new IllegalArgumentException("Withdrawal amount must be positive");
-        } else if (amount > balance) {
-            throw new Exception("Insufficient balance");
-        } else {
-            balance -= amount;
-            System.out.println("Withdrew: " + amount);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter Name: ");
+            String n = sc.nextLine();
+            System.out.print("Enter Marks: ");
+            int m = sc.nextInt();
+            System.out.println("Name: " + n + "\nMarks: " + m + "\nGrade: " + grade(m));
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
+        sc.close();
     }
 }
+
+
+
+// q2 write a programm that converts temperature from clsius to FARENHITE THROW AN EXception if an user enters an non numerical value or an invalid range
