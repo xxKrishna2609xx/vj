@@ -161,38 +161,58 @@
 // }
 
 
-import java.util.*;
+// import java.util.*;
 
-public class StudentGradingSystem {
-    static char grade(int m) {
-        if (m < 0 || m > 100)
-            throw new IllegalArgumentException("Invalid marks");
-        if (m >= 90) 
-            return 'A';
-        if (m >= 75) 
-            return 'B';
-        if (m >= 60) 
-            return 'C';
-        if (m >= 40) 
-            return 'D';
-        return 'F';
-    }
+// public class StudentGradingSystem {
+//     static char grade(int m) {
+//         if (m < 0 || m > 100)
+//             throw new IllegalArgumentException("Invalid marks");
+//         if (m >= 90) 
+//             return 'A';
+//         if (m >= 75) 
+//             return 'B';
+//         if (m >= 60) 
+//             return 'C';
+//         if (m >= 40) 
+//             return 'D';
+//         return 'F';
+//     }
 
+//     public static void main(String[] args) {
+//         Scanner sc = new Scanner(System.in);
+//         try {
+//             System.out.print("Enter Name: ");
+//             String n = sc.nextLine();
+//             System.out.print("Enter Marks: ");
+//             int m = sc.nextInt();
+//             System.out.println("Name: " + n + "\nMarks: " + m + "\nGrade: " + grade(m));
+//         } catch (Exception e) {
+//             System.out.println("Error: " + e.getMessage());
+//         }
+//         sc.close();
+//     }
+// }
+
+
+// // q2 write a programm that converts temperature from clsius to FARENHITE THROW AN EXception if an user enters an non numerical value or an invalid range
+
+
+
+
+public class StudentGradingSystem{
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        try {
-            System.out.print("Enter Name: ");
-            String n = sc.nextLine();
-            System.out.print("Enter Marks: ");
-            int m = sc.nextInt();
-            System.out.println("Name: " + n + "\nMarks: " + m + "\nGrade: " + grade(m));
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+        int arr [] = {1,2,5,7,5,3};
+        int k = 3; 
+        int currSum = 0;
+        int maxSum;
+        for(int i=0 ; i<k ; i++){
+            currSum += arr[i];
         }
-        sc.close();
+        maxSum = currSum;
+        for(int right = k; right<arr.length ; right++){
+            currSum += arr[right] - arr[right - k];
+            maxSum = Math.max(maxSum,currSum);
+        }
+        System.out.println("max sum =" + maxSum);
     }
 }
-
-
-
-// q2 write a programm that converts temperature from clsius to FARENHITE THROW AN EXception if an user enters an non numerical value or an invalid range
